@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tablero Buscaminas</title>
+</head>
+<body>
+    Filas: {{ filas }}<br/> <!-- Filas viene de forms.py y filas viene de la vista-->
+    Columnas: {{ columnas }}<br/>
+<table style="border: 1px solid black;">
+    <!--recorremos los datos establecidos en vista teniendo en cuenta los valores del forms.py-->
+    {% for fila in rango_filas %}
+        <tr style="height: 15px">
+        {% for columna in rango_columnas %}
+            <td style="width: 15px; border: 1px solid black"></td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
